@@ -31,20 +31,20 @@ jobs:
       - name: build and push project builder
         id: cmake_builder
         uses: docker/build-push-action@v2
-          with:
-            push: true
-            tags: ci-cmake-builder
+        with:
+          push: true
+          tags: ci-cmake-builder
 
       - name: build and push unit tester
         id: unit_test
         uses: docker/build-push-action@v2
-          with:
-            push: true
-            tags: ci-unit-test
+        with:
+          push: true
+          tags: ci-unit-test
 
       - name: build and push sonar scanner
         id: sonar_scanner
         uses: docker/build-push-action@v2
-          with:
-            push: true
-            tags: ci-sonar-scanner
+        with:
+          push: true
+          tags: ci-sonar-scanner
