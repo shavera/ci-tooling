@@ -27,7 +27,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       
       - name: build base image
-        run: docker buildx build . -t local/project-base -f project-base.Dockerfile
+        run: docker build . -t local/project-base -f project-base.Dockerfile
 
       - name: build and push project builder
         id: cmake_builder
