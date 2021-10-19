@@ -1,4 +1,4 @@
-FROM local/project-builder
+FROM shavera/ci-cmake-builder
 
 RUN apt-get -qqy install gcovr
 
