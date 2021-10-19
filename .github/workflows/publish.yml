@@ -3,7 +3,7 @@ name: Publish Docker Images
 on:
   workflow_dispatch:
   push:
-    branches: [ $default-branch ]
+    branches: main
 
 env:
   USER_NAME: shavera
@@ -31,7 +31,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ci-cmake-builder
+          tags: shavera/ci-cmake-builder
           file: builder.Dockerfile
 
       - name: build and push unit tester
@@ -39,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ci-unit-test
+          tags: shavera/ci-unit-test
           file: unit-test.Dockerfile
 
       - name: build and push sonar scanner
@@ -47,5 +47,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ci-sonar-scanner
+          tags: shavera/ci-sonar-scanner
           file: sonar-scanner.Dockerfile
