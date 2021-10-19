@@ -1,9 +1,9 @@
 name: Publish Docker Images
 
 on:
-  - workflow_dispatch
-  - push:
-      branches: [ $default-branch ]
+  workflow_dispatch:
+  push:
+    branches: [ $default-branch ]
 
 env:
   USER_NAME: shavera
