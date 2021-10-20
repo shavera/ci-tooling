@@ -16,7 +16,7 @@ if [[ ! -d "${COVERAGE_DIR}" ]]; then
 fi
 
 cd "$BUILD_DIR" || exit 1
-ctest
+ctest --no-tests=error
 
 cd "$SOURCE_DIR" || exit 1
 gcovr --sonarqube "${COVERAGE_DIR}/coverage.xml"
