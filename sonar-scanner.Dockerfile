@@ -1,8 +1,4 @@
-FROM ubuntu
-
-RUN apt-get update
-ENV DEBIAN_FRONTEND="noninteractive"
-RUN apt-get -qqy install apt-utils tzdata
+FROM shavera/ci-cmake-builder
 
 RUN apt-get -qqy install \
     curl \
