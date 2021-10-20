@@ -49,3 +49,10 @@ jobs:
           push: true
           tags: shavera/ci-sonar-scanner
           file: sonar-scanner.Dockerfile
+
+      - name: build ci-tooling
+        id: ci_tooling
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: shavera/ci-tooling

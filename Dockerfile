@@ -20,6 +20,7 @@ RUN apt-get -qqy install \
 ENV SOURCE_DIR=""
 ENV BUILD_DIR=""
 ENV COVERAGE_DIR=""
+ENV TOOLING_DIR="/usr/local/bin/ci-tooling"
 
 #install cmake from kitware apt repo
 WORKDIR /tmp/kitware
@@ -46,6 +47,8 @@ ENV PATH="/usr/.sonar/build-wrapper-linux-x86:/usr/.sonar/sonar-scanner-$SONAR_S
 ENV SONAR_TOKEN=""
 
 #install our several build phase scripts
-WORKDIR /usr/local/bin/ci-tooling
-COPY scripts/* /usr/local/bin/ci-tooling/
-RUN chmod +x /usr/local/bin/ci-tooling/*
+WORKDIR $TOOLING_DIR
+COPY scripts/* $TOOLING_DIR
+RUN chmod +x "${TOOLING_DIR}/*"
+
+ENTRYPOINT ["${TOOLING_DIR}/metabuild.sh"]
