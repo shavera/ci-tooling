@@ -22,6 +22,5 @@ if [[ ! -d "${BUILD_DIR}" ]]; then
   mkdir -p BUILD_DIR
 fi
 
-cd "${SOURCE_DIR}" || exit 1
 cmake -G Ninja -DBUILD_CODE_COVERAGE=ON -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -S "${SOURCE_DIR}" -B "${BUILD_DIR}"
 cmake --build "${BUILD_DIR}" --target all

@@ -17,12 +17,12 @@ RUN wget https://apt.kitware.com/kitware-archive.sh && \
     ./kitware-archive.sh && \
     apt-get -qqy install cmake
 
-WORKDIR /usr/bin/ci-slingshot
-COPY scripts/build-project.sh .
-RUN chmod +x build-project.sh
+WORKDIR /usr
+COPY scripts/build-project.sh /usr/bin/
+RUN chmod +x /usr/bin/build-project.sh
 
 # SOURCE_DIR and BUILD_DIR should be specified with the run
 # They are assumed to be volumes mounted to some location
 ENV SOURCE_DIR=""
 ENV BUILD_DIR=""
-ENTRYPOINT ./build-project.sh
+ENTRYPOINT build-project.sh
