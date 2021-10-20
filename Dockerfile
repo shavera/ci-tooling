@@ -49,6 +49,6 @@ ENV SONAR_TOKEN=""
 #install our several build phase scripts
 WORKDIR $TOOLING_DIR
 COPY scripts/* $TOOLING_DIR
-RUN chmod +x "${TOOLING_DIR}/*"
+RUN chmod +x *
 
 ENTRYPOINT ["${TOOLING_DIR}/metabuild.sh"]
