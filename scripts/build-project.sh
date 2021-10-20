@@ -9,10 +9,9 @@ Help()
   # Display help
   echo "Syntax: build-project.sh [-b BUILD_DIR] SOURCE_DIR"
 }
-echo "START build script"
 
 if [[ ! -d "${SOURCE_DIR}" ]]; then
-  echo "No directory specified by SOURCE_DIR exists."
+  echo "No directory specified by SOURCE_DIR ${SOURCE_DIR} exists."
   exit 1
 fi
 
