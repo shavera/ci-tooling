@@ -8,3 +8,5 @@ RUN apt-get -qqy install gcovr
 ENV COVERAGE_DIR=""
 COPY scripts/unit-test.sh /usr/bin/
 RUN chmod +x /usr/bin/unit-test.sh
+
+ENTRYPOINT [ "unit-test.sh" ]
