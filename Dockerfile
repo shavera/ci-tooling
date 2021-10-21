@@ -51,4 +51,4 @@ WORKDIR $TOOLING_DIR
 COPY scripts/* $TOOLING_DIR
 RUN chmod +x *
 
-ENTRYPOINT ["${TOOLING_DIR}/metabuild.sh"]
+ENTRYPOINT "$TOOLING_DIR/metabuild.sh"
